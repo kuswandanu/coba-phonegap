@@ -1,0 +1,27 @@
+<?xml version = "1.0" encoding = "UTF-8"?>
+
+<widget xmlns = "http://www.w3.org/ns/widgets" 
+   xmlns:gap = "http://phonegap.com/ns/1.0" id = "io.github.kuswandanu.coba-phonegap" version = "1.0">
+   
+   <name>Coba PhoneGap</name>
+   
+   <description>
+      Uji Coba Menggunakan PhoneGap untuk Membuat Aplikasi
+   </description>
+   
+   <author href = "http://kuswandanu.github.io" email = "kuswandanu@gmail.com">kuswandanu</author>
+   
+   <preference name = "permissions" value = "none"/>
+   
+   <icon src = "www/res/icon/android/icon-36-ldpi.png" gap:platform = "android" gap:qualifier = "ldpi" />
+   <icon src = "www/res/icon/android/icon-48-mdpi.png" gap:platform = "android" gap:qualifier = "mdpi" />
+   <icon src = "www/res/icon/android/icon-72-hdpi.png" gap:platform = "android" gap:qualifier = "hdpi" />
+   <icon src = "www/res/icon/android/icon-96-xhdpi.png" gap:platform = "android" gap:qualifier = "xhdpi" />
+   
+   <icon src = "www/res/icon/ios/icon-72.png" gap:platform = "ios" gap:qualifier = ""/>
+   <icon src = "www/res/icon/ios/icon-57.png" gap:platform = "ios" width = "57" height = "57" />
+   <icon src = "www/res/icon/ios/icon-72.png" gap:platform = "ios" width = "72" height = "72" />
+   <icon src = "www/res/icon/ios/icon-57-2x.png" gap:platform = "ios" width = "114" height = "114" />
+   <icon src = "www/res/icon/ios/icon-72-2x.png" gap:platform = "ios" width = "144" height = "144" />
+   
+</widget>
