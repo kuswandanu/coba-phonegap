@@ -11,7 +11,7 @@
    
    <author href = "http://kuswandanu.github.io" email = "kuswandanu@gmail.com">kuswandanu</author>
    
-   <preference name = "permissions" value = "none"/>
+   <!-- <preference name = "permissions" value = "none"/> -->
 
    <gap:plugin name="cordova-admob" source="npm"/>
 

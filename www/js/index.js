@@ -10,11 +10,12 @@ var app = {
         document.removeEventListener('deviceready', app.onDeviceReady, false);
         document.addEventListener("backbutton", app.onBackKeyDown, false);
 
+        document.addEventListener(admob.events.onAdLoaded, function (e) {});
         admob.setOptions({
             publisherID: 'ca-app-pub-8573812479971236/7519602300',
             interstitialAdId: 'ca-app-pub-8573812479971236/8437932300',
-            bannerAtTop: false, // set to true, to put banner at top
-            overlap: false, // set to true, to allow banner overlap webview
+            bannerAtTop: true, // set to true, to put banner at top
+            overlap: true, // set to true, to allow banner overlap webview
             offsetStatusBar: true, // set to true to avoid ios7 status bar overlap
             isTesting: true, // receiving test ads (do not test with real ads as your account will be banned)
             autoShowBanner: true, // auto show banners ad when loaded
