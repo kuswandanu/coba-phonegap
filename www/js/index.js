@@ -6,7 +6,8 @@ var app = {
     },
 
     onDeviceReady : function() {
-        alert("PhoneGap is working");
+        // alert("PhoneGap is working");
+        document.removeEventListener('deviceready', app.onDeviceReady, false);
         document.addEventListener("backbutton", app.onBackKeyDown, false);
 
         admob.setOptions({
