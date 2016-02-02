@@ -2,7 +2,11 @@ var app = {
     inMenu : "",
 
     initialize : function(){
-        document.addEventListener("deviceready", this.onDeviceReady, false);
+        if (( /(ipad|iphone|ipod|android)/i.test(navigator.userAgent) )) {
+          document.addEventListener('deviceready', this.onDeviceReady, false);
+        } else {
+          app.onDeviceReady();
+        }
     },
 
     onDeviceReady : function() {
@@ -10,24 +14,29 @@ var app = {
         document.removeEventListener('deviceready', app.onDeviceReady, false);
         document.addEventListener("backbutton", app.onBackKeyDown, false);
 
-        document.addEventListener(admob.events.onAdLoaded, function (e) {});
-        document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
-        document.addEventListener(admob.events.onAdOpened, function (e) {});
-        document.addEventListener(admob.events.onAdClosed, function (e) {});
-        document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
-        document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
-        var banner = 'ca-app-pub-8573812479971236/7519602300';
-        var interstitial = 'ca-app-pub-8573812479971236/8437932300';
-        admob.setOptions({
-            publisherID: banner,
-            interstitialAdId: interstitial,
-            bannerAtTop: true, // set to true, to put banner at top
-            overlap: true, // set to true, to allow banner overlap webview
-            offsetStatusBar: true, // set to true to avoid ios7 status bar overlap
-            isTesting: true, // receiving test ads (do not test with real ads as your account will be banned)
-            autoShowBanner: true, // auto show banners ad when loaded
-            autoShowInterstitial: false // auto show interstitials ad when loaded
-        });
+        if(admob) {
+            document.addEventListener(admob.events.onAdLoaded, function (e) {});
+            document.addEventListener(admob.events.onAdFailedToLoad, function (e) {});
+            document.addEventListener(admob.events.onAdOpened, function (e) {});
+            document.addEventListener(admob.events.onAdClosed, function (e) {});
+            document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
+            document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
+            var banner = 'ca-app-pub-8573812479971236/7519602300';
+            var interstitial = 'ca-app-pub-8573812479971236/8437932300';
+            admob.setOptions({
+                publisherID: banner,
+                interstitialAdId: interstitial,
+                bannerAtTop: true, // set to true, to put banner at top
+                overlap: true, // set to true, to allow banner overlap webview
+                offsetStatusBar: true, // set to true to avoid ios7 status bar overlap
+                isTesting: true, // receiving test ads (do not test with real ads as your account will be banned)
+                autoShowBanner: true, // auto show banners ad when loaded
+                autoShowInterstitial: false // auto show interstitials ad when loaded
+            });
+        }
+        else {
+            alert("Plugin AdMob tidak aktif.");
+        }
         // admob.createBannerView();
         // admob.requestInterstitialAd();
     },
@@ -41,7 +50,6 @@ var app = {
         }
         else
         {
-        admob.createBannerView();
             removeClass(document.getElementById(app.inMenu), "visible");
             app.inMenu = "";
             addClass(document.getElementById("menu"), "visible");
@@ -58,6 +66,7 @@ var app = {
         }
         else if (document.getElementById("k"+zap))
         {
+        admob.createBannerView();
             app.inMenu = "k"+zap;
             removeClass(document.getElementById("menu"), "visible");
             addClass(document.getElementById("k"+zap), "visible");
