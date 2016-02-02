@@ -6,7 +6,7 @@ var app = {
     },
 
     onDeviceReady : function() {
-        // alert("PhoneGap is working");
+        alert("PhoneGap is working");
         document.removeEventListener('deviceready', app.onDeviceReady, false);
         document.addEventListener("backbutton", app.onBackKeyDown, false);
 
@@ -16,8 +16,8 @@ var app = {
         document.addEventListener(admob.events.onAdClosed, function (e) {});
         document.addEventListener(admob.events.onAdLeftApplication, function (e) {});
         document.addEventListener(admob.events.onInAppPurchaseRequested, function (e) {});
-        var banner: 'ca-app-pub-8573812479971236/7519602300';
-        var interstitial: 'ca-app-pub-8573812479971236/8437932300';
+        var banner = 'ca-app-pub-8573812479971236/7519602300';
+        var interstitial = 'ca-app-pub-8573812479971236/8437932300';
         admob.setOptions({
             publisherID: banner,
             interstitialAdId: interstitial,
