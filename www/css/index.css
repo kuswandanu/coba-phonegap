@@ -30,3 +30,30 @@ a.bab {
   line-height: 20px;
   text-decoration: none;
 }
+
+a.bagian {
+  display:block;
+  padding: 10px 10px;
+  background: #669ADC;
+  color: #FFF;
+  margin: 10px 20px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+a.paragraf {
+  display:block;
+  padding: 10px 10px;
+  background: #88BCFE;
+  color: #FFF;
+  margin: 10px 30px;
+  line-height: 20px;
+  text-decoration: none;
+}
+
+.hidden {
+    display: none;
+}
+.visible {
+    display: block;
+}

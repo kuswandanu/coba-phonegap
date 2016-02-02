@@ -6,6 +6,7 @@
 		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<script type="text/javascript" src="js/index.js"></script>
 		<meta name="msapplication-tap-highlight" content="no" />
 		<title>Coba PhoneGap</title>
 	</head>
@@ -13,54 +14,54 @@
 		<div id="fullpage" class="app">
 			<h1>UJI COBA MENGGUNAKAP PHONEGAB</h1>
 			<h1>UNTUK MEMBUAT APLIKASI MOBILE</h1>
-			<a class="bab" href="data/1.html">
+			<a class="bab" onclick="return collapsible('1');">
 				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
+				<div class="judul">Pertama</div>
 			</a>
-			<a class="bab" href="data/2.html">
+			<div id="1" class="hidden">
+				<a class="bagian" onclick="return collapsible('11');">
+					<div class="nomor">Bagian Satu</div>
+					<div class="judul">Satu</div>
+				</a>
+				<div id="11" class="hidden">
+					<a class="paragraf" href="data/1.html">
+						<div class="nomor">Paragraf 1</div>
+						<div class="judul">Satu</div>
+					</a>
+					<a class="paragraf" href="data/2.html">
+						<div class="nomor">Paragraf 2</div>
+						<div class="judul">Dua</div>
+					</a>
+				</div>
+				<a class="bagian" href="data/2.html">
+					<div class="nomor">Bagian Dua</div>
+					<div class="judul">Dua</div>
+				</a>
+			</div>
+			<a class="bab" onclick="return collapsible('2');">
 				<div class="nomor">BAB II</div>
 				<div class="judul">Analisa Data</div>
 			</a>
-			<a class="bab" href="data/1.html">
-				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
-			</a>
-			<a class="bab" href="data/2.html">
-				<div class="nomor">BAB II</div>
-				<div class="judul">Analisa Data</div>
-			</a>
-			<a class="bab" href="data/1.html">
-				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
-			</a>
-			<a class="bab" href="data/2.html">
-				<div class="nomor">BAB II</div>
-				<div class="judul">Analisa Data</div>
-			</a>
-			<a class="bab" href="data/1.html">
-				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
-			</a>
-			<a class="bab" href="data/2.html">
-				<div class="nomor">BAB II</div>
-				<div class="judul">Analisa Data</div>
-			</a>
-			<a class="bab" href="data/1.html">
-				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
-			</a>
-			<a class="bab" href="data/2.html">
-				<div class="nomor">BAB II</div>
-				<div class="judul">Analisa Data</div>
-			</a>
-			<a class="bab" href="data/1.html">
-				<div class="nomor">BAB I</div>
-				<div class="judul">Pendahuluan</div>
-			</a>
-			<a class="bab" href="data/2.html">
-				<div class="nomor">BAB II</div>
-				<div class="judul">Analisa Data</div>
-			</a>
+			<div id="2" class="hidden">
+				<a class="bagian" onclick="return collapsible('21');">
+					<div class="nomor">BAB I</div>
+					<div class="judul">Pendahuluan</div>
+				</a>
+				<div id="21" class="hidden">
+					<a class="paragraf" href="data/1.html">
+						<div class="nomor">BAB I</div>
+						<div class="judul">Pendahuluan</div>
+					</a>
+					<a class="paragraf" href="data/2.html">
+						<div class="nomor">BAB II</div>
+						<div class="judul">Analisa Data</div>
+					</a>
+				</div>
+				<a class="bagian" href="data/2.html">
+					<div class="nomor">BAB II</div>
+					<div class="judul">Analisa Data</div>
+				</a>
+			</div>
 		</div>
 	</body>
 </html>
