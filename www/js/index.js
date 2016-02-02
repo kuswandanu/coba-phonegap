@@ -1,5 +1,5 @@
 var app = {
-    inMenu : true,
+    inMenu : "",
 
     initialize : function(){
         document.addEventListener("deviceready", this.onDeviceReady, false);
@@ -11,11 +11,13 @@ var app = {
     },
 
     onBackKeyDown : function() {
-        if(inMenu)
-            navigator.app.exitApp();
+        if(app.inMenu == "")
+            // navigator.app.exitApp();
+            alert("keluar");
         else
         {
-            inMenu = true;
+            removeClass(document.getElementById(app.inMenu), "visible");
+            app.inMenu = "";
             addClass(document.getElementById("menu"), "visible");
         }
     },
@@ -28,12 +30,14 @@ var app = {
             else
                 addClass(document.getElementById(zap), "visible");
         }
-        else
+        else if (document.getElementById("k"+zap))
         {
-            alert(zap);
-            inMenu = false;
+            app.inMenu = "k"+zap;
             removeClass(document.getElementById("menu"), "visible");
+            addClass(document.getElementById("k"+zap), "visible");
         }
+        else
+            alert("NULL");
     }
 };
 
