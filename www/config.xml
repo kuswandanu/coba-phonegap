@@ -12,7 +12,9 @@
    <author href = "http://kuswandanu.github.io" email = "kuswandanu@gmail.com">kuswandanu</author>
    
    <preference name = "permissions" value = "none"/>
-   
+
+   <gap:plugin name="cordova-admob" source="npm"/>
+
    <icon src = "res/icon/android/icon-36-ldpi.png" gap:platform = "android" gap:qualifier = "ldpi" />
    <icon src = "res/icon/android/icon-48-mdpi.png" gap:platform = "android" gap:qualifier = "mdpi" />
    <icon src = "res/icon/android/icon-72-hdpi.png" gap:platform = "android" gap:qualifier = "hdpi" />
