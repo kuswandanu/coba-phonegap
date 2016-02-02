@@ -6,25 +6,24 @@
 		<!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
 		<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi">
 		<link rel="stylesheet" type="text/css" href="css/index.css" />
-		<script type="text/javascript" src="js/index.js"></script>
 		<meta name="msapplication-tap-highlight" content="no" />
 		<title>Coba PhoneGap</title>
 	</head>
 	<body>
-		<div id="fullpage" class="app">
-			<h1>UJI COBA MENGGUNAKAP PHONEGAB</h1>
-			<h1>UNTUK MEMBUAT APLIKASI MOBILE</h1>
-			<a class="bab" onclick="return collapsible('1');">
+		<div id="fullpage" class="app hidden visible">
+			<h3>UJI COBA MENGGUNAKAP PHONEGAB</h3>
+			<h3>UNTUK MEMBUAT APLIKASI MOBILE</h3>
+			<a class="bab" onclick="app.click('1');">
 				<div class="nomor">BAB I</div>
 				<div class="judul">Pertama</div>
 			</a>
 			<div id="1" class="hidden">
-				<a class="bagian" onclick="return collapsible('11');">
+				<a class="bagian" onclick="app.click('11');">
 					<div class="nomor">Bagian Satu</div>
 					<div class="judul">Satu</div>
 				</a>
 				<div id="11" class="hidden">
-					<a class="paragraf" href="data/1.html">
+					<a class="paragraf" onclick="app.click('1');">
 						<div class="nomor">Paragraf 1</div>
 						<div class="judul">Satu</div>
 					</a>
@@ -38,12 +37,12 @@
 					<div class="judul">Dua</div>
 				</a>
 			</div>
-			<a class="bab" onclick="return collapsible('2');">
+			<a class="bab" onclick="app.click('2');">
 				<div class="nomor">BAB II</div>
 				<div class="judul">Analisa Data</div>
 			</a>
 			<div id="2" class="hidden">
-				<a class="bagian" onclick="return collapsible('21');">
+				<a class="bagian" onclick="app.click('21');">
 					<div class="nomor">BAB I</div>
 					<div class="judul">Pendahuluan</div>
 				</a>
@@ -63,5 +62,8 @@
 				</a>
 			</div>
 		</div>
+		<script type="text/javascript" src="cordova.js"></script>
+		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript">app.initialize();</script>
 	</body>
 </html>

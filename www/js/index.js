@@ -1,20 +1,31 @@
-window['collapsible'] = function(zap) {
-    if (document.getElementById)
-    {
-        // var visDivs = document.getElementsByClassName('visible');
-        // for(var i = 0; i < visDivs.length; i++)
-        // {
-        //     visDivs[i].className = visDivs[i].className.replace('visible','');
-        // }
-        // document.getElementById(zap).className += " visible";
+var app = {
+    menu : false,
 
-        if (document.getElementById(zap).className.indexOf('visible') > -1)
-            document.getElementById(zap).className = document.getElementById(zap).className.replace('visible','');
+    initialize : function(){
+        document.addEventListener("deviceready", this.onDeviceReady, false);
+    },
+
+    onDeviceReady : function() {
+        alert("device ready");
+        document.addEventListener("backbutton", app.onBackKeyDown, false);
+    },
+
+    onBackKeyDown : function() {
+        alert("backbutton");
+    },
+
+    click : function(zap) {
+        alert("click");
+        if (document.getElementById)
+        {
+            if (document.getElementById(zap).className.indexOf('visible') > -1)
+                document.getElementById(zap).className = document.getElementById(zap).className.replace('visible','');
+            else
+                document.getElementById(zap).className += " visible";
+
+            return false;
+        }
         else
-            document.getElementById(zap).className += " visible";
-
-        return false;
+            return true;
     }
-    else
-        return true;
-}
+};
