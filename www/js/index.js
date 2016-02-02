@@ -1,31 +1,50 @@
 var app = {
-    menu : false,
+    inMenu : true,
 
     initialize : function(){
         document.addEventListener("deviceready", this.onDeviceReady, false);
     },
 
     onDeviceReady : function() {
-        alert("device ready");
+        navigator.notification.alert("PhoneGap is working");
         document.addEventListener("backbutton", app.onBackKeyDown, false);
     },
 
     onBackKeyDown : function() {
-        alert("backbutton");
+        if(inMenu)
+            navigator.app.exitApp();
+        else
+        {
+            inMenu = true;
+            addClass(document.getElementById("menu"), "visible");
+        }
     },
 
     click : function(zap) {
-        alert("click");
-        if (document.getElementById)
+        if (document.getElementById(zap))
         {
             if (document.getElementById(zap).className.indexOf('visible') > -1)
-                document.getElementById(zap).className = document.getElementById(zap).className.replace('visible','');
+                removeClass(document.getElementById(zap), "visible");
             else
-                document.getElementById(zap).className += " visible";
-
-            return false;
+                addClass(document.getElementById(zap), "visible");
         }
         else
-            return true;
+        {
+            navigator.notification.alert(zap);
+            inMenu = false;
+            removeClass(document.getElementById("menu"), "visible");
+        }
     }
 };
+
+function removeClass(elem, cls) {
+  var str;
+  do {
+    str = " " + elem.className + " ";
+    elem.className = str.replace(" " + cls + " ", " ").replace(/^\s+|\s+$/g, "");
+  } while (str.match(cls));
+}
+
+function addClass(elem, cls) {
+  elem.className += (" " + cls);
+}
