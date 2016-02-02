@@ -28,8 +28,8 @@ var app = {
             autoShowBanner: true, // auto show banners ad when loaded
             autoShowInterstitial: false // auto show interstitials ad when loaded
         });
-        admob.createBannerView();
-        admob.requestInterstitialAd();
+        // admob.createBannerView();
+        // admob.requestInterstitialAd();
     },
 
     onBackKeyDown : function() {
@@ -41,6 +41,7 @@ var app = {
         }
         else
         {
+        admob.createBannerView();
             removeClass(document.getElementById(app.inMenu), "visible");
             app.inMenu = "";
             addClass(document.getElementById("menu"), "visible");
