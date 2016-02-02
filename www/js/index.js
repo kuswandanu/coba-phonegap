@@ -10,13 +10,12 @@ var app = {
         document.addEventListener("backbutton", app.onBackKeyDown, false);
 
         admob.setOptions({
-            publisherID: 'ca-app-pub-9863325511078756/9802347428',
+            publisherID: 'ca-app-pub-8573812479971236/7519602300',
             bannerAtTop: false, // set to true, to put banner at top
             overlap: false, // set to true, to allow banner overlap webview
             offsetStatusBar: true, // set to true to avoid ios7 status bar overlap
             isTesting: true, // receiving test ads (do not test with real ads as your account will be banned)
             autoShowBanner: true, // auto show banners ad when loaded
-            autoShowInterstitial: false // auto show interstitials ad when loaded
         });
         admob.createBannerView();
     },
