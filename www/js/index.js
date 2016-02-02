@@ -6,7 +6,7 @@ var app = {
     },
 
     onDeviceReady : function() {
-        navigator.notification.alert("PhoneGap is working");
+        alert("PhoneGap is working");
         document.addEventListener("backbutton", app.onBackKeyDown, false);
     },
 
@@ -30,7 +30,7 @@ var app = {
         }
         else
         {
-            navigator.notification.alert(zap);
+            alert(zap);
             inMenu = false;
             removeClass(document.getElementById("menu"), "visible");
         }
